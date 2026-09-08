@@ -1,14 +1,15 @@
-# راهکار دیجیتال — نسخه تک‌صفحه‌ای
+# Rahkar Digital — Single-Page Website
 
-- فقط HTML + CSS + JavaScript خام
-- بدون بک‌اند و بدون کتابخانه خارجی
-- تمام بخش‌ها داخل `index.html` هستند.
-- منوی بالا با JavaScript بین sectionها جابه‌جا می‌شود و فایل HTML جدید باز نمی‌کند.
-- hash URL برای لینک‌پذیری بخش‌ها حفظ می‌شود.
-- طراحی ریسپانسیو برای دسکتاپ، تبلت و موبایل
-- شامل بخش‌های خانه، خدمات، نمونه‌کارها، چرا طراحی سایت؟، درباره ما و تماس با ما
-- شامل عنوان و description، canonical، robots، Open Graph و Schema.org
-- لینک‌های تماس نمونه هستند و باید با لینک‌های واقعی جایگزین شوند.
+- Built with plain HTML, CSS, and JavaScript
+- No backend and no external libraries
+- All sections are contained in `index.html`
+- JavaScript navigation switches between sections without opening separate HTML pages
+- Hash-based URLs are preserved for direct section links
+- Responsive layout for desktop, tablet, and mobile
+- Includes Home, Services, Portfolio, Why a Website?, About Us, and Contact Us sections
+- Includes SEO title and description, canonical URL, robots, Open Graph, and Schema.org metadata
+- Contact links are examples and can be replaced with real business links
 
-## اجرا
-فایل `index.html` را مستقیماً باز کنید یا از یک static server ساده استفاده کنید.
+## Run
+
+Open `index.html` directly in a browser or serve the folder with any simple static server.

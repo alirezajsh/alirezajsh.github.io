@@ -21,7 +21,7 @@
     state.activeSection = target;
     sections.forEach(s => s.classList.toggle('active', s.id === target));
     navLinks.forEach(link => link.classList.toggle('active', link.dataset.target === target));
-    document.title = `${section.dataset.title} | راهکار دیجیتال`;
+    document.title = `${section.dataset.title} | Rahkar Digital`;
     if (updateUrl) history.pushState({ section: target }, '', `#${target}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     closeMobileMenu();
@@ -61,15 +61,15 @@
   searchForm?.addEventListener('submit', e => {
     e.preventDefault();
     const query = document.getElementById('siteSearch').value.trim();
-    if (!query) return showToast('لطفاً عبارت موردنظر را وارد کنید.');
-    const map = [{ words:['طراحی','سایت','وب'], target:'services' }, { words:['نمونه','کار'], target:'portfolio' }, { words:['چرا','سود','فایده'], target:'why' }, { words:['تماس','ارتباط'], target:'contact' }];
+    if (!query) return showToast('Please enter a search term.');
+    const map = [{ words:['design','website','web','seo'], target:'services' }, { words:['portfolio','project','work'], target:'portfolio' }, { words:['why','benefit','advantage'], target:'why' }, { words:['contact','email','message'], target:'contact' }];
     const found = map.find(item => item.words.some(word => query.includes(word)));
     if (found) { setActiveSection(found.target); searchPanel.setAttribute('hidden',''); }
-    else showToast('نتیجه مستقیمی پیدا نشد؛ از منوی بالا استفاده کنید.');
+    else showToast('No direct result found. Try using the navigation above.');
   });
 
   document.querySelectorAll('.detail-btn').forEach(btn => btn.addEventListener('click', () => {
-    modalTitle.textContent = btn.dataset.project || 'پروژه نمونه';
+    modalTitle.textContent = btn.dataset.project || 'Sample project';
     projectModal.classList.add('open'); projectModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
   }));
   function closeModal(){ projectModal.classList.remove('open'); projectModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
