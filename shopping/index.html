@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tech Store - Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav id="header">
+            <div id="header-left">
+                <span id="logo">
+                    <!-- لوگو با SVG -->
+                    <svg width="50" height="50" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="90" fill="#3498db"/>
+                        <rect x="60" y="50" width="80" height="15" rx="3" fill="white"/>
+                        <rect x="92" y="50" width="15" height="80" rx="3" fill="white"/>
+                        <circle cx="100" cy="145" r="8" fill="#2ecc71"/>
+                        <line x1="70" y1="170" x2="130" y2="170" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <a class="items active-link" data-section="home" href="#home">Home</a>
+                <a class="items" data-section="products" href="#products">Products</a>
+                <a class="items" data-section="about-us" href="#about-us">About Us</a>
+                <a class="items" data-section="connect-with-us" href="#connect-with-us">Connect With Us</a>
+            </div>
+            <div id="header1">
+                <a href="#shopping-cart" data-section="shopping-cart" class="items">sh-c</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ========== HOME SECTION ========== -->
+        <section class="section active" id="home">
+            <div class="home-container">
+                <div class="home-text">
+                    <h1>Your One-Stop Tech Destination</h1>
+                    <p>From wireless earbuds to smart watches – discover the latest gadgets that make life easier, smarter, and more fun. Quality tech at prices you'll love.</p>
+                    <div class="home-buttons">
+                        <button onclick="showSection('products')" class="btn-primary">Shop Now →</button>
+                        <button onclick="showSection('about-us')" class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="home-image">
+                    <img id="headline-image" src="assets/ChatGPT Image Sep 9, 2026, 11_07_59 AM.png" alt="Tech Products">
+                </div>
+            </div>
+            <div class="trust-badges">
+                <span>✅ 2,500+ Happy Customers</span>
+                <span>✅ Free Tech Support</span>
+                <span>✅ 1-Year Warranty</span>
+            </div>
+        </section>
+
+        <!-- ========== PRODUCTS SECTION ========== -->
+        <section class="section" id="products">
+            <div class="section-header">
+                
+                <h2>Premium Tech Products</h2>
+                
+            </div>
+
+            <div class="products-grid">
+                <!-- product1 : airpod-->
+                <div class="product-card">
+                    
+                    <img src="assets/product1.png" alt="AirPods Pro">
+                    <h3>AirPods Pro Wireless Earbuds</h3>
+                    <div class="rating">★★★★★ (1,245 reviews)</div>
+                    <p class="product-desc">Active noise cancellation, 24-hour battery life, sweat-resistant</p>
+                    <div class="price">
+                        <span class="current">$79.99</span>
+                        <span class="original">$129.99</span>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('AirPods Pro', 79.99)">Add to Cart 🛒</button>
+                </div>
+
+                <!-- product2: smart watch-->
+                <div class="product-card">
+                    
+                    <img src="assets/product2.png" alt="Smart Watch">
+                    <h3>SmartFit Pro Watch</h3>
+                    <div class="rating">★★★★☆ (876 reviews)</div>
+                    <p class="product-desc">Heart rate monitor, GPS, 5-day battery life, sleep tracking</p>
+                    <div class="price">
+                        <span class="current">$149.99</span>
+                        <span class="original">$249.99</span>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('SmartFit Pro Watch', 149.99)">Add to Cart 🛒</button>
+                </div>
+
+                <!-- product3: power boost-->
+                <div class="product-card">
+                    
+                    <img src="assets/product3.png" alt="Power Bank">
+                    <h3>PowerBoost 20000mAh</h3>
+                    <div class="rating">★★★★★ (2,103 reviews)</div>
+                    <p class="product-desc">Fast-charge your phone 5 times, dual USB ports, LED display</p>
+                    <div class="price">
+                        <span class="current">$39.99</span>
+                        <span class="original">$59.99</span>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('PowerBoost 20000mAh', 39.99)">Add to Cart 🛒</button>
+                </div>
+
+                <!-- product4: microphone-->
+                <div class="product-card">
+                    
+                    <img src="assets/product4.png" alt="Microphone">
+                    <h3>Pro Studio USB Microphone</h3>
+                    <div class="rating">★★★★☆ (432 reviews)</div>
+                    <p class="product-desc">Plug & play, cardioid pattern, crystal clear audio for streaming</p>
+                    <div class="price">
+                        <span class="current">$89.99</span>
+                        <span class="original">$149.99</span>
+                    </div>
+                    <button class="buy-btn" onclick="addToCart('Pro Studio USB Microphone', 89.99)">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT US SECTION ========== -->
+        <section class="section" id="about-us">
+            <div class="section-header">
+                
+                <h2>Who We Are</h2>
+            </div>
+            <div class="about-content">
+                <p>TechHub was born in 2022 with a simple vision: to make cutting-edge technology accessible to everyone. We believe that great gadgets shouldn't break the bank. Every product in our store is handpicked by tech enthusiasts who test each item for quality, durability, and performance.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Tech Products</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1,200+</h3>
+                        <p>Orders Delivered</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.8/5</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section class="section" id="connect-with-us">
+            <div class="section-header">
+                
+                <h2>Connect With Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>📍 Address:</strong> 456 Tech Avenue, Silicon Valley, CA 94025</p>
+                    <p><strong>📧 Email:</strong> example@gmail.com</p>
+                    <p><strong>📞 Phone:</strong> +1 (800) 123-4567</p>
+                    <p><strong>🕒 Hours:</strong> Mon-Sat: 9AM - 9PM | Sunday: Closed</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" id="writter-name" placeholder="Your Full Name" required>
+                    <input type="email" id="writter-email" placeholder="Your Email Address" required>
+                    <textarea id="mail-content" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" id="mail-submit">Send Message →</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- =========== SHOPPING CART ==========-->
+        <section class="section" id="shopping-cart">
+            <div id="shopping-cart-div">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TechHub. All rights reserved. Made with ❤️</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
