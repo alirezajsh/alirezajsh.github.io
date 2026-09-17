@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سایت تورات</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+    background: #f4f1ea;
+    color: #2c2c2c;
+    line-height: 1.8;
+  }
+
+  /* ===== هدر ===== */
+  header {
+    background: linear-gradient(135deg, #1e3a5f, #2c5282);
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* ===== بخش قهرمان ===== */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1200') center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+  }
+
+  .hero div {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    background: #d4a017;
+    color: #1e3a5f;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #f0c040;
+    transform: scale(1.05);
+  }
+
+  /* ===== بخش‌ها ===== */
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    color: #1e3a5f;
+    border-right: 5px solid #d4a017;
+    padding-right: 12px;
+    margin-bottom: 25px;
+  }
+
+  /* جستجو */
+  .search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .search-box input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+  }
+
+  .search-box input:focus {
+    outline: none;
+    border-color: #2c5282;
+  }
+
+  .search-box button {
+    background: #2c5282;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .search-box button:hover {
+    background: #1e3a5f;
+  }
+
+  /* کارت پاراشا */
+  .parasha-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-right: 4px solid #d4a017;
+  }
+
+  .parasha-card:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+  }
+
+  .parasha-card h3 {
+    color: #2c5282;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .parasha-card p {
+    color: #555;
+    font-size: 15px;
+  }
+
+  .parasha-card .tag {
+    display: inline-block;
+    background: #e8eef5;
+    color: #2c5282;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  /* مودال خواندن */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .modal.active { display: flex; }
+
+  .modal-content {
+    background: #fff;
+    max-width: 650px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    padding: 30px;
+    position: relative;
+  }
+
+  .modal-content h3 {
+    color: #1e3a5f;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d4a017;
+    padding-bottom: 10px;
+  }
+
+  .modal-content p {
+    font-size: 17px;
+    line-height: 2.2;
+    margin-bottom: 15px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  /* ===== فوتر ===== */
+  footer {
+    background: #1e3a5f;
+    color: #cfd8e3;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 14px;
+  }
+
+  .empty-msg {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- هدر -->
+<header>
+  <h1>📖 سایت تورات</h1>
+  <nav>
+    <a href="#" onclick="scrollToSection('home')">خانه</a>
+    <a href="#" onclick="scrollToSection('read')">خواندن</a>
+    <a href="#" onclick="scrollToSection('about')">درباره</a>
+  </nav>
+</header>
+
+<!-- قهرمان -->
+<section class="hero" id="home">
+  <div>
+    <h2>تورات — کتاب مقدس</h2>
+    <p>پاراشاهای هفتگی، متن و ترجمه فارسی</p>
+    <button class="btn" onclick="scrollToSection('read')">شروع خواندن</button>
+  </div>
+</section>
+
+<!-- بخش خواندن -->
+<div class="container" id="read">
+  <h2 class="section-title">پاراشاهای تورات</h2>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="جستجوی پاراشا..." oninput="filterParashot()">
+    <button onclick="filterParashot()">🔍 جستجو</button>
+  </div>
+
+  <div id="parashaList"></div>
+</div>
+
+<!-- بخش درباره -->
+<div class="container" id="about">
+  <h2 class="section-title">درباره سایت</h2>
+  <div class="parasha-card">
+    <p>
+      این سایت نمونه‌ای برای خواندن پاراشاهای هفتگی تورات است.
+      متن‌ها به صورت نمونه هستند و می‌توانید آن‌ها را با متن واقعی جایگزین کنید.
+      طراحی با HTML، CSS و JavaScript انجام شده است.
+    </p>
+  </div>
+</div>
+
+<!-- فوتر -->
+<footer>
+  © ۱۴۰۴ — سایت نمونه تورات | ساخته شده با HTML, CSS, JS
+</footer>
+
+<!-- مودال خواندن -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  // داده‌های نمونه پاراشا
+  const parashot = [
+    {
+      name: "برشیت (Genesis)",
+      desc: "آفرینش جهان، آدم و حوا، نوح و کشتی",
+      tag: "هفته ۱",
+      text: "در ابتدا خدا آسمان و زمین را آفرید. و زمین خالی و بی‌شکل بود...\n\nاین متن نمونه است. می‌توانید متن کامل پاراشا و ترجمه فارسی را اینجا قرار دهید."
+    },
+    {
+      name: "نوح (Noah)",
+      desc: "طوفان، کشتی نوح، عهد رنگین‌کمان",
+      tag: "هفته ۲",
+      text: "و خداوند به نوح گفت: از تمامی زمین وارد کشتی شو...\n\nمتن نمونه — قابل ویرایش."
+    },
+    {
+      name: "لخ لخا (Lech-Lecha)",
+      desc: "دعوت ابراهیم، سفر به سرزمین کنعان",
+      tag: "هفته ۳",
+      text: "و خداوند به ابرام گفت: از سرزمین خود بیرون رو...\n\nمتن نمونه — قابل ویرایش."
+    },
+    {
+      name: "وایه‌را (Vayera)",
+      desc: "مهمان‌نوازی ابراهیم، سدوم و عموره",
+      tag: "هفته ۴",
+      text: "و خداوند بر او در بلوط‌های ممری ظاهر شد...\n\nمتن نمونه — قابل ویرایش."
+    },
+    {
+      name: "حیی سارا (Chayei Sarah)",
+      desc: "مرگ سارا، ازدواج اسحاق و ربقا",
+      tag: "هفته ۵",
+      text: "و عمر سارا یکصد و بیست و هفت سال بود...\n\nمتن نمونه — قابل ویرایش."
+    }
+  ];
+
+  const listEl = document.getElementById('parashaList');
+
+  // رندر کارت‌ها
+  function renderParashot(arr) {
+    if (arr.length === 0) {
+      listEl.innerHTML = '<p class="empty-msg">پاراشایی پیدا نشد 😕</p>';
+      return;
+    }
+
+    listEl.innerHTML = arr.map((p, i) => `
+      <div class="parasha-card" onclick="openModal(${parashot.indexOf(p)})">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <span class="tag">${p.tag}</span>
+      </div>
+    `).join('');
+  }
+
+  // فیلتر جستجو
+  function filterParashot() {
+    const q = document.getElementById('searchInput').value.trim().toLowerCase();
+    const filtered = parashot.filter(p =>
+      p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)
+    );
+    renderParashot(filtered);
+  }
+
+  // باز کردن مودال
+  function openModal(index) {
+    const p = parashot[index];
+    document.getElementById('modalTitle').textContent = p.name;
+    document.getElementById('modalBody').innerHTML = p.text.replace(/\n/g, '<br>');
+    document.getElementById('modal').classList.add('active');
+  }
+
+  // بستن مودال
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+  }
+
+  // بستن با کلیک بیرون
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // بستن با ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // اسکرول نرم
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // رندر اولیه
+  renderParashot(parashot);
+</script>
+
+</body>
+</html>

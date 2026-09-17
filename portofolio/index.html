@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نمونه کارهای من | طراح سایت</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #0f0f1a;
+    color: #e8e8f0;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+  
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f0f1a 60%);
+    position: relative;
+  }
+  .hero-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6366f1;
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.5);
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #a78bfa, #6366f1, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    color: #a5a5b8;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6); }
+  .btn-outline {
+    background: transparent;
+    color: #a78bfa;
+    border-color: #6366f1;
+  }
+  .btn-outline:hover { background: #6366f1; color: white; }
+  
+  /* Sections */
+  section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+  
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+    margin: 0 auto;
+    display: block;
+  }
+  .about-text h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #a78bfa; }
+  .about-text p { color: #b8b8c8; margin-bottom: 1rem; }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+  .skill-tag {
+    background: rgba(99, 102, 241, 0.15);
+    color: #a78bfa;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+  }
+  
+  /* Portfolio */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .card {
+    background: linear-gradient(145deg, #1a1a2e, #16162a);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 25px 60px rgba(99, 102, 241, 0.3);
+  }
+  .card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #22223a;
+    display: block;
+  }
+  .card-body { padding: 1.5rem; }
+  .card-body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
+  .card-body p { color: #9999aa; font-size: 0.95rem; margin-bottom: 1rem; }
+  .card-tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 0.25rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+  }
+  
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .service {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .service:hover {
+    background: rgba(99, 102, 241, 0.15);
+    transform: translateY(-5px);
+  }
+  .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .service h4 { font-size: 1.15rem; margin-bottom: 0.5rem; color: #a78bfa; }
+  .service p { color: #9999aa; font-size: 0.9rem; }
+  
+  /* Contact */
+  .contact {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(56, 189, 248, 0.05));
+    border-radius: 30px;
+    padding: 4rem 2rem !important;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+  .contact h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+  .contact p { color: #b8b8c8; margin-bottom: 2rem; }
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(99, 102, 241, 0.15);
+    border-radius: 50px;
+    color: #e8e8f0;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+  }
+  .contact-link:hover { background: #6366f1; transform: translateY(-3px); }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: #666677;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; text-align: center; }
+    section { padding: 3rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <!-- ⬇️ عکس خودت رو اینجا بذار (اسم فایل: profile.jpg) -->
+  <img src="profile.jpg" alt="عکس من" class="hero-avatar" onerror="this.style.display='none'">
+  <h1>سلام، من علیرضا جورکش هستم</h1>
+  <p>طراح و توسعهدهنده سایت — کسبوکارت رو به دنیای دیجیتال میآورم</p>
+  <div class="btn-group">
+    <a href="#portfolio" class="btn btn-primary">مشاهده نمونهکارها</a>
+    <a href="#contact" class="btn btn-outline">تماس با من</a>
+  </div>
+</section>
+
+<!-- درباره من -->
+<section id="about">
+  <h2 class="section-title">درباره من</h2>
+  <div class="about-grid">
+    <!-- ⬇️ عکس پروفایل خودت (اسم فایل: about.jpg) -->
+    <img src="about.jpg" alt="درباره من" class="about-img" onerror="this.style.display='none'">
+    <div class="about-text">
+      <h3>طراح سایت با علاقه به جزئیات</h3>
+      <p>من علیرضا جورکش هستم و چند سالی هست که در زمینه طراحی و توسعه وبسایت فعالیت میکنم. تخصص من ساخت سایتهای سریع، مدرن و کاربرپسند برای کسبوکارهای کوچک و متوسط است.</p>
+      <p>هدفم اینه که کسبوکار تو رو با یک سایت حرفهای به مشتریهای بیشتری معرفی کنم.</p>
+      <div class="skills">
+        <span class="skill-tag">HTML/CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">WordPress</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">سئو</span>
+        <span class="skill-tag">ریسپانسیو</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- نمونهکارها -->
+<section id="portfolio">
+  <h2 class="section-title">نمونهکارهای من</h2>
+  <div class="portfolio-grid">
+    
+    <!-- کار ۱: طلا فروشی -->
+    <div class="card">
+      <!-- ⬇️ اسکرینشات سایت طلافروشی (اسم فایل: portfolio-gold.jpg) -->
+      <img src="portofolio-gold.png" alt="سایت طلافروشی" class="card-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%2322223a%22 width=%22800%22 height=%22600%22/><text x=%22400%22 y=%22300%22 fill=%22%236366f1%22 font-size=%2232%22 text-anchor=%22middle%22>سایت طلا فروشی</text></svg>'">
+      <div class="card-body">
+        <h3>سایت طلا فروشی</h3>
+        <p>طراحی سایت فروشگاهی طلا و جواهرات با گالری محصولات، سیستم سفارش آنلاین و طراحی لوکس.</p>
+        <span class="card-tag">فروشگاهی</span>
+        <span class="card-tag">ریسپانسیو</span>
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <img src="portfolio-sofa.png" alt="سایت مبل فروشی" class="card-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%2322223a%22 width=%22800%22 height=%22600%22/><text x=%22400%22 y=%22300%22 fill=%22%236366f1%22 font-size=%2232%22 text-anchor=%22middle%22>سایت مبل فروشی</text></svg>'">
+      <div class="card-body">
+        <h3>سایت مبل فروشی</h3>
+        <p>سایت نمایش محصولات مبل با دستهبندی، گالری تصاویر و فرم درخواست مشاوره.</p>
+        <span class="card-tag">فروشگاهی</span>
+        <span class="card-tag">گالری</span>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="portifolio-build.png" alt="سایت شرکت ساختمانی" class="card-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><rect fill=%22%2322223a%22 width=%22800%22 height=%22600%22/><text x=%22400%22 y=%22300%22 fill=%22%236366f1%22 font-size=%2232%22 text-anchor=%22middle%22>سایت ساختمانی</text></svg>'">
+      <div class="card-body">
+        <h3>سایت شرکت ساختمانی ارس بنا</h3>
+        <p>وبسایت معرفی پروژههای ساختمانی، خدمات مهندسی و نمونهکارهای اجرا شده.</p>
+        <span class="card-tag">شرکتی</span>
+        <span class="card-tag">معرفی پروژه</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- خدمات -->
+<section id="services">
+  <h2 class="section-title">خدمات من</h2>
+  <div class="services-grid">
+    <div class="service">
+      <div class="service-icon">🛒</div>
+      <h4>سایت فروشگاهی</h4>
+      <p>راهاندازی فروشگاه آنلاین با درگاه پرداخت و پنل مدیریت</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🏢</div>
+      <h4>سایت شرکتی</h4>
+      <p>سایت معرفی کسبوکار، خدمات و نمونهکارها</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">📱</div>
+      <h4>طراحی ریسپانسیو</h4>
+      <p>نمایش عالی سایت روی موبایل، تبلت و دسکتاپ</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">🚀</div>
+      <h4>سئو و سرعت</h4>
+      <p>بهینهسازی سایت برای موتورهای جستجو و سرعت بالا</p>
+    </div>
+  </div>
+</section>
+
+<!-- تماس -->
+<section id="contact" class="contact">
+  <h2>آمادهای سایتت رو بسازیم؟</h2>
+  <p>برای مشاوره رایگان و سفارش، با من در تماس باش</p>
+  <div class="contact-links">
+    <!-- شمارهت رو جایگزین کن -->
+    <a href="https://t.me/pythondeveloper" class="contact-link">💬 تلگرام</a>
+    <a href="tel:+989109616896" class="contact-link">📞 تماس</a>
+
+    <a href="https://instagram.com/webdeveloper_applicationdeveloper" class="contact-link">📷 اینستاگرام</a>
+    <a href="mailto:alirezajsh1386@gmail.com" class="contact-link">✉️ ایمیل</a>
+  </div>
+</section>
+
+<footer>
+  © ۱۴۰۳ — ساخته شده با ❤️ توسط علیرضا جورکش
+</footer>
+
+</body>
+</html>
