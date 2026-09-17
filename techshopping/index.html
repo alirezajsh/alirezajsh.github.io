@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechHub — premium everyday tech, smart devices, accessories and creator gear.">
+    <meta name="theme-color" content="#0a0d14">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TechHub — Modern Tech Store</title>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <nav class="navbar" aria-label="Primary navigation">
+                <a class="brand" href="#home" data-section="home" aria-label="TechHub home">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" role="img"><rect x="8" y="8" width="32" height="32" rx="10"/><path d="M16 17h16M24 17v14M17 31h14"/></svg>
+                    </span>
+                    <span><strong>Tech</strong>Hub</span>
+                </a>
+
+                <div class="nav-links" id="nav-links">
+                    <a class="nav-link active-link" data-section="home" href="#home">Home</a>
+                    <a class="nav-link" data-section="products" href="#products">Products</a>
+                    <a class="nav-link" data-section="about-us" href="#about-us">About Us</a>
+                    <a class="nav-link" data-section="connect-with-us" href="#connect-with-us">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+                        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <button class="cart-btn" type="button" data-section="shopping-cart" aria-label="Open shopping cart">
+                        <svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.3a2 2 0 0 0 2 1.7h7.9a2 2 0 0 0 1.9-1.5L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+                        <span>Cart</span>
+                        <b class="cart-count" id="cart-count">0</b>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section active" id="home">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <span class="eyebrow">CURATED FOR MODERN LIFE</span>
+                        <h1>Technology that looks as good as it performs.</h1>
+                        <p>Discover thoughtfully selected gadgets for work, play and everything in between — without the clutter.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" type="button" onclick="showSection('products')">Explore products <span>→</span></button>
+                            <button class="btn btn-ghost" type="button" onclick="showSection('about-us')">Why TechHub</button>
+                        </div>
+                        <div class="hero-proof">
+                            <div class="avatar-stack" aria-hidden="true"><span>JD</span><span>AM</span><span>SK</span><span>+</span></div>
+                            <div><strong>2,500+ happy customers</strong><small>Trusted for everyday tech</small></div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-image-wrap">
+                            <div class="hero-glow"></div>
+                            <img src="assets/ChatGPT Image Sep 9, 2026, 11_07_59 AM.png" alt="A selection of premium technology products">
+                            <div class="floating-card floating-card-top"><span class="floating-icon">✦</span><div><strong>Premium picks</strong><small>Hand-selected gear</small></div></div>
+                            <div class="floating-card floating-card-bottom"><span class="price-pill">4.9</span><div><strong>Customer rated</strong><small>Across our top picks</small></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-strip">
+                    <div><span class="trust-icon">✦</span><div><strong>Curated quality</strong><small>Products we actually like</small></div></div>
+                    <div><span class="trust-icon">↗</span><div><strong>Fast delivery</strong><small>Simple, reliable shipping</small></div></div>
+                    <div><span class="trust-icon">✓</span><div><strong>1-year warranty</strong><small>Extra peace of mind</small></div></div>
+                    <div><span class="trust-icon">◌</span><div><strong>Tech support</strong><small>Human help when needed</small></div></div>
+                </div>
+            </section>
+
+            <section class="section" id="products">
+                <div class="section-intro">
+                    <div>
+                        <span class="eyebrow">THE EVERYDAY EDIT</span>
+                        <h2>Popular right now</h2>
+                        <p>Four smart essentials. One clean place to find them.</p>
+                    </div>
+                    <button class="text-btn" type="button" onclick="showSection('connect-with-us')">Need help choosing? <span>→</span></button>
+                </div>
+
+                <div class="product-toolbar">
+                    <div class="category-pills" aria-label="Product categories">
+                        <button class="category-pill active" type="button">All</button>
+                        <button class="category-pill" type="button">Audio</button>
+                        <button class="category-pill" type="button">Wearables</button>
+                        <button class="category-pill" type="button">Power</button>
+                        <button class="category-pill" type="button">Creator gear</button>
+                    </div>
+                    <span class="product-count">4 products</span>
+                </div>
+
+                <div class="products-grid">
+                    <article class="product-card">
+                        <div class="product-media"><span class="badge">BESTSELLER</span><button class="heart-btn" aria-label="Save AirPods Pro">♡</button><img src="assets/product1.png" alt="AirPods Pro Wireless Earbuds"></div>
+                        <div class="product-body">
+                            <div class="product-category">AUDIO</div>
+                            <h3>AirPods Pro Wireless Earbuds</h3>
+                            <p>Active noise cancellation, 24-hour battery life, sweat-resistant.</p>
+                            <div class="rating-row"><span class="stars">★★★★★</span><span>1,245 reviews</span></div>
+                            <div class="product-footer"><div><strong>$79.99</strong><del>$129.99</del></div><button class="buy-btn" onclick="addToCart('AirPods Pro',79.99)">Add to cart</button></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-media"><span class="badge muted">SMART PICK</span><button class="heart-btn" aria-label="Save SmartFit Pro Watch">♡</button><img src="assets/product2.png" alt="SmartFit Pro Watch"></div>
+                        <div class="product-body">
+                            <div class="product-category">WEARABLES</div>
+                            <h3>SmartFit Pro Watch</h3>
+                            <p>GPS, heart-rate monitoring, sleep tracking and a 5-day battery.</p>
+                            <div class="rating-row"><span class="stars">★★★★☆</span><span>876 reviews</span></div>
+                            <div class="product-footer"><div><strong>$149.99</strong><del>$249.99</del></div><button class="buy-btn" onclick="addToCart('SmartFit Pro Watch',149.99)">Add to cart</button></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-media"><span class="badge">BEST VALUE</span><button class="heart-btn" aria-label="Save PowerBoost 20000mAh">♡</button><img src="assets/product3.png" alt="PowerBoost 20000mAh Power Bank"></div>
+                        <div class="product-body">
+                            <div class="product-category">POWER</div>
+                            <h3>PowerBoost 20000mAh</h3>
+                            <p>Fast-charge your phone five times with dual USB ports and display.</p>
+                            <div class="rating-row"><span class="stars">★★★★★</span><span>2,103 reviews</span></div>
+                            <div class="product-footer"><div><strong>$39.99</strong><del>$59.99</del></div><button class="buy-btn" onclick="addToCart('PowerBoost 20000mAh',39.99)">Add to cart</button></div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-media"><span class="badge muted">CREATOR FAVORITE</span><button class="heart-btn" aria-label="Save Pro Studio USB Microphone">♡</button><img src="assets/product4.png" alt="Pro Studio USB Microphone"></div>
+                        <div class="product-body">
+                            <div class="product-category">CREATOR GEAR</div>
+                            <h3>Pro Studio USB Microphone</h3>
+                            <p>Plug-and-play cardioid microphone built for streaming and clear audio.</p>
+                            <div class="rating-row"><span class="stars">★★★★☆</span><span>432 reviews</span></div>
+                            <div class="product-footer"><div><strong>$89.99</strong><del>$149.99</del></div><button class="buy-btn" onclick="addToCart('Pro Studio USB Microphone',89.99)">Add to cart</button></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="about-us">
+                <div class="about-hero">
+                    <div><span class="eyebrow">THE TECHHUB DIFFERENCE</span><h2>Less noise. Better tech.</h2><p>We started TechHub with a simple belief: great technology should feel exciting, useful and easy to choose. So we curate the essentials, explain them clearly and keep the buying experience refreshingly simple.</p></div>
+                    <div class="about-highlight"><span>01</span><strong>Curated, not crowded.</strong><small>We focus on standout products instead of endless choices.</small></div>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card"><span>50+</span><strong>Products</strong><p>Carefully selected across everyday tech categories.</p></div>
+                    <div class="about-card"><span>1.2K+</span><strong>Orders delivered</strong><p>Real customers using TechHub in their daily routines.</p></div>
+                    <div class="about-card"><span>4.8/5</span><strong>Average rating</strong><p>High standards from first click to after-sales support.</p></div>
+                </div>
+            </section>
+
+            <section class="section" id="connect-with-us">
+                <div class="contact-layout">
+                    <div class="contact-copy">
+                        <span class="eyebrow">LET'S TALK TECH</span>
+                        <h2>Have a question? We're here.</h2>
+                        <p>Need help choosing a product, want a recommendation, or just have a question? Send us a message and we'll get back to you.</p>
+                        <div class="contact-list">
+                            <a href="mailto:example@gmail.com"><span>✉</span><div><strong>Email</strong><small>example@gmail.com</small></div></a>
+                            <a href="tel:+18001234567"><span>＋</span><div><strong>Phone</strong><small>+1 (800) 123-4567</small></div></a>
+                            <a href="#connect-with-us"><span>◷</span><div><strong>Hours</strong><small>Mon–Sat · 9AM–9PM</small></div></a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-header"><strong>Send a message</strong><span>We usually reply within one business day.</span></div>
+                        <label>Full name<input type="text" id="writter-name" placeholder="Alex Morgan" required></label>
+                        <label>Email address<input type="email" id="writter-email" placeholder="you@example.com" required></label>
+                        <label>Message<textarea id="mail-content" placeholder="How can we help?" rows="6" required></textarea></label>
+                        <button type="submit" id="mail-submit" class="btn btn-primary">Send message <span>→</span></button>
+                        <small class="form-note">By sending this form, you agree to be contacted about your request.</small>
+                    </form>
+                </div>
+            </section>
+
+            <section class="section" id="shopping-cart">
+                <div class="section-intro cart-heading">
+                    <div><span class="eyebrow">YOUR BAG</span><h2>Shopping cart</h2><p>Review your picks before checkout.</p></div>
+                    <button class="text-btn" type="button" onclick="showSection('products')">Continue shopping <span>→</span></button>
+                </div>
+                <div class="cart-layout">
+                    <div class="cart-items-card" id="shopping-cart-div"></div>
+                    <aside class="cart-summary" id="cart-summary"></aside>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div><strong>TechHub</strong><span>Modern tech, thoughtfully selected.</span></div>
+            <p>© 2026 TechHub. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
