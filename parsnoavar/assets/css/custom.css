@@ -1,0 +1,136 @@
+/* پروژه مستقل پارس فناوری‌های نوآور — تکمیل تعاملات */
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:Vazirmatn,Tahoma,sans-serif}
+button,a,input,textarea{font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(0,180,216,.32);outline-offset:3px}
+.mobile-navigation{display:none;position:absolute;inset-inline:16px;top:calc(100% + 8px);padding:10px;border:1px solid rgba(15,76,129,.12);border-radius:16px;background:rgba(255,255,255,.98);box-shadow:0 18px 45px rgba(15,76,129,.14);z-index:60}
+.mobile-navigation:not([hidden]){display:grid;gap:3px}
+.mobile-navigation a{padding:12px 14px;border-radius:10px;color:#2D3748;font-size:14px;font-weight:600}
+.mobile-navigation a:hover{background:#F1F7FA;color:#0F4C81}
+.form-status{min-height:1.5rem;margin-top:8px;color:#0F4C81;font-size:12px;line-height:1.8}
+.footer-form-status{color:#d9f8ff}
+.form-status.is-error{color:#c2410c}
+.form-status.is-success{color:#087443}
+.site-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.site-modal.is-open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(5,24,42,.58);backdrop-filter:blur(5px)}
+.modal-dialog{position:relative;z-index:1;width:min(680px,100%);max-height:min(82vh,850px);overflow:auto;border:1px solid rgba(15,76,129,.12);border-radius:22px;background:#fff;padding:30px;box-shadow:0 30px 100px rgba(2,20,38,.25);direction:rtl}
+.modal-close{position:absolute;left:18px;top:16px;width:38px;height:38px;border:1px solid rgba(15,76,129,.14);border-radius:11px;background:#f8fafc;color:#0F4C81;font-size:25px;line-height:1;cursor:pointer}
+.modal-kicker{display:inline-flex;padding:6px 11px;border-radius:999px;background:rgba(0,180,216,.1);color:#0F7893;font-size:11px;font-weight:800}
+.modal-dialog h2{margin:18px 42px 16px 0;color:#0F4C81;font-size:23px;font-weight:800;line-height:1.7}
+.modal-content{color:#4A5568;font-size:14px;line-height:2.1}
+.modal-content p{margin:0 0 13px}
+.modal-content ul{margin:10px 0;padding-right:22px;list-style:disc}
+.modal-content li{margin:5px 0}
+.modal-actions{display:flex;justify-content:flex-start;margin-top:20px;padding-top:18px;border-top:1px solid rgba(15,76,129,.1)}
+.modal-cta{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:11px;background:#F77F00;color:white;font-size:13px;font-weight:800}
+.modal-cta:hover{background:#e07400}
+[data-project-category][hidden]{display:none!important}
+#testimonial-figure{transition:opacity .22s ease,transform .22s ease}
+#testimonial-figure.is-changing{opacity:.25;transform:translateY(5px)}
+@media(max-width:640px){.modal-dialog{padding:24px 20px;border-radius:18px}.modal-dialog h2{font-size:20px}.site-modal{padding:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* تکمیل بصری کارت‌های خدمات */
+#services .service-card{
+  padding:0;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+#services .service-card-media{
+  position:relative;
+  height:178px;
+  overflow:hidden;
+  background:#eaf2f7;
+}
+#services .service-card-media::after{
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(180deg,transparent,rgba(5,35,60,.22));
+  pointer-events:none;
+}
+#services .service-card-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .55s ease;
+}
+#services .service-card:hover .service-card-media img{transform:scale(1.055)}
+#services .service-card-body{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:0 24px 24px;
+}
+#services .service-card-icon{
+  position:relative;
+  margin-top:-25px;
+  z-index:1;
+  width:50px;
+  height:50px;
+  border:4px solid #fff;
+  border-radius:14px;
+  box-shadow:0 5px 16px rgba(15,76,129,.12);
+}
+#services .service-card-body h3{margin-top:14px;line-height:1.8}
+#services .service-description{
+  margin-top:10px;
+  flex:1;
+  color:#4A5568;
+  font-size:13px;
+  line-height:2.05;
+}
+#services .service-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:14px;
+  min-height:30px;
+}
+#services .service-tags span{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid rgba(15,76,129,.10);
+  border-radius:999px;
+  background:#f4f8fb;
+  padding:5px 9px;
+  color:#47647d;
+  font-size:10px;
+  font-weight:600;
+  line-height:1.4;
+}
+#services .service-details-button{margin-top:18px}
+#team .team-member-card{opacity:1;transform:none}
+#team .team-member-card img{object-fit:cover}
+#testimonials button[aria-label^="نمایش نظر شماره"]{
+  display:inline-block;
+  height:6px;
+  padding:0;
+  border:0;
+  border-radius:999px;
+  transition:width .28s ease,background-color .28s ease,opacity .28s ease;
+  cursor:pointer;
+}
+#testimonials button[aria-label^="نمایش نظر شماره"][aria-current="true"]{
+  width:28px;
+  background:#0F4C81;
+  opacity:1;
+}
+#testimonials button[aria-label^="نمایش نظر شماره"][aria-current="false"]{
+  width:6px;
+  background:rgba(15,76,129,.25);
+  opacity:1;
+}
+@media(max-width:640px){
+  #services .service-card-media{height:165px}
+  #services .service-card-body{padding-inline:20px;padding-bottom:21px}
+}
+@media(prefers-reduced-motion:reduce){
+  #services .service-card-media img,#testimonials button[aria-label^="نمایش نظر شماره"]{transition:none}
+}
