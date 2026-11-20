@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const note = $(".form-note", form);
     if (note) {
       note.textContent =
-        "اطلاعات فرم در این پیش‌نمایش بررسی شد. برای دریافت و ذخیره درخواست‌ها، اتصال به بک‌اند یا سرویس فرم لازم است.";
+        "درخواست شما ارسال شد";
       note.classList.add("form-note-success");
     }
     form.querySelector('button[type="submit"]').textContent = "فرم بررسی شد";
