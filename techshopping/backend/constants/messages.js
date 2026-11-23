@@ -1,4 +1,4 @@
-// ===== constants/messages.js =====
+
 const MESSAGES = {
     CONTACT_CREATED: 'Message saved successfully!',
     CONTACTS_FETCHED: 'Messages fetched successfully',

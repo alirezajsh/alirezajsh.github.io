@@ -1,4 +1,3 @@
-// ===== models/Contact.js =====
 const { query } = require('../config/database');
 
 class Contact {

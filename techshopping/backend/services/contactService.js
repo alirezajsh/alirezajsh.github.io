@@ -4,11 +4,10 @@ const Contact = require('../models/Contact');
 class ContactService {
     // ===== ثبت پیام جدید =====
     static async createContact({ name, email, content }) {
-        // منطق تجاری: مثلاً میتونیم اینجا ایمیل بفرستیم
         const newContact = await Contact.create({ name, email, content });
         
         // TODO: ارسال ایمیل (بعداً)
-        // await emailService.sendNotification(newContact);
+
         
         return newContact;
     }

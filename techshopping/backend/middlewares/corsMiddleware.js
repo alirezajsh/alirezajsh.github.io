@@ -2,7 +2,7 @@
 const cors = require('cors');
 
 const corsOptions = {
-    origin: '*',  // ← همه منابع رو اجازه بده (برای توسعه)
+    origin: '*', // فقط برای توسعه
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 };

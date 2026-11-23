@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-  // Mobile navigation
+  
   const menuToggle = $('header button[aria-controls="mobile-nav"]');
   const mobileNav = $('#mobile-nav');
   if (menuToggle && mobileNav) {
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // Menu category filters
   const cards = $$('#menu article[data-menu-item]');
   const filterButtons = $$('#menu [data-filter]');
   filterButtons.forEach(button => button.addEventListener('click', () => {
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach(card => { card.hidden = filter !== 'all' && card.dataset.category !== filter; });
   }));
 
-  // Read more in the About section
   const readMore = $('#about .read-more-btn');
   if (readMore) {
     readMore.addEventListener('click', () => {
@@ -44,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Shared details / gallery modal
   const modal = $('#site-modal');
   const modalImage = $('#modal-image');
   const modalTitle = $('#modal-title');
@@ -99,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
   reserveLink?.addEventListener('click', closeModal);
 
-  // Review carousel — sample copy is explicitly identified in the page.
   const reviews = [
     { quote: 'فضای گرم و آرام، در کنار عطر غذای ایرانی، تجربه‌ای دلنشین برای یک دورهمی خانوادگی می‌سازد.', author: 'مهمان باغ ایرانی' },
     { quote: 'ترکیب طعم‌های آشنا، سرو مرتب و حال‌وهوای سنتی، اینجا را برای یک قرار دوستانه مناسب می‌کند.', author: 'مهمان باغ ایرانی' },
